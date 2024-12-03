@@ -5,9 +5,10 @@ import pathlib
 
 # Define file and folder
 file = 'file2.txt'
+folder = 'Raetsel_Zwei'
 
 # Construct the file path
-file_path = pathlib.Path.cwd() / file
+file_path = pathlib.Path.cwd() / folder /file
 
 # Print current working directory for debugging
 print("Current working directory:", pathlib.Path.cwd())
@@ -45,9 +46,10 @@ def safeorunsafe(puzzle_input):
         if row == sorted(row) or row == sorted(row, reverse=True):
             # Check if all consecutive elements differ by at least 1 and at most 3
             if all(1 <= abs(row[i] - row[i+1]) <= 3 for i in range(len(row) - 1)):
+                #print('Row is safe:', row)
                 saferow += 1
         else:
-            print('Row is unsafe:', row)
+            #print('Row is unsafe:', row)
 
     return saferow
 

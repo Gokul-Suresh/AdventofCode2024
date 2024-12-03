@@ -7,18 +7,25 @@
 import pathlib 
 
 
-# load the file
+# Define file and folder
 file = 'file.txt'
-folder = 'AdventCode204/Raetsel_Eins'
+folder = 'Raetsel_Eins'
 
-file_path = pathlib.Path.cwd() / folder / file
+# Construct the file path
+file_path = pathlib.Path.cwd() / folder /file
 
-#check if the file exists
+# Print current working directory for debugging
+print("Current working directory:", pathlib.Path.cwd())
+
+# Initialize file_content
+file_content = ''
+
+# Check if the file exists
 if file_path.exists():
     with file_path.open('r') as f:
         file_content = f.read()
 else:
-    print('File not found')
+    print('File not found:', file_path)
 
 # Initialize lists for storing columns
 listA = []
