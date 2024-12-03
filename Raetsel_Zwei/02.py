@@ -48,7 +48,7 @@ def safeorunsafe(puzzle_input):
             if all(1 <= abs(row[i] - row[i+1]) <= 3 for i in range(len(row) - 1)):
                 #print('Row is safe:', row)
                 saferow += 1
-        else:
+        #else:
             #print('Row is unsafe:', row)
 
     return saferow
